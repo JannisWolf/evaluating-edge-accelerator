@@ -1,2 +1,7 @@
 Good explanation of the theory of quantization (especially full int8 quantization for the Coral TPU)
 https://medium.com/sclable/model-quantization-using-tensorflow-lite-2fe6a171a90d
+(6.7.2021)
+
+Example on full integer quantization for a small network for MNIST (was important to see how the quantization of the data is performed for the prediction)
+https://tensorflow.google.cn/lite/performance/post_training_integer_quant
+(6.7.2021)
