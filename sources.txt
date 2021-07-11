@@ -14,3 +14,6 @@ Compiling tensorflow models to the intermediate representation for the Intel NCS
 https://movidius.github.io/ncsdk/tf_compile_guidance.html
 (11.7.2021)
 
+Raspberry Openvino getting started guide
+https://docs.openvinotoolkit.org/latest/openvino_docs_install_guides_installing_openvino_raspbian.html
+(11.7.2021)
