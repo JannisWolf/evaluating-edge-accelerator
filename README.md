@@ -10,7 +10,7 @@ Openvino is then installed to /opt/intel/openvino2021. You need to set the envir
 source /opt/intel/openvino2021/bin/setupvars.sh
 ```
 
-For the Google Coral Dev Board follow this getting started guide, if Mendel linux is not flashed on the board yet. Otherwise connect to it with 
+For the Google Coral Dev Board follow this [getting started guide](https://coral.ai/docs/dev-board/get-started/), if Mendel linux is not flashed on the board yet. Otherwise direclty connect to it with 
 
 ```bash
 mdt shell
@@ -29,10 +29,23 @@ For measuring performance of the NCS2 or a CPU using openvino call
 python3 measure_ncs2.py -m model.xml -d [MYRIAD/CPU]
 ```
 
-Folder edge_tpu contains benchmarking scripts for measuring with tensorflow lite either on the tpu or on the ARM cores depending on the model your a using, start with following command
+Folder edge_tpu contains benchmarking scripts for measuring with tensorflow lite either on the tpu or on the ARM cores depending on the model your a using.
 
-for calculation on the Edge TPU:
+For calculation on the Edge TPU (Leaky relu or relu. See practical_edge_ncs.pdf):
 
 ```bash
-mdt shell
+python3 measure_coral.py --model model_quant_edgetpu[_relu].tflite
 ```
+
+For calculation on the ARM quantized (Leaky relu or relu. See practical_edge_ncs.pdf):
+
+```bash
+python3 measure_coral.py --model model_quant[_relu].tflite
+```
+
+For calculation on the ARM full float precision (Leaky relu or relu. See practical_edge_ncs.pdf):
+
+```bash
+python3 measure_coral_no_quant.py --model model.tflite
+```
+
